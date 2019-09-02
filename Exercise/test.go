@@ -1,10 +1,11 @@
 package main
-import `fmt`
 
-func main(){
-  var x int
+import "fmt"
 
-  x = 03646
+func main() {
+	var x int
 
-  fmt.Printf(`%od`,x)
+	x = 03646
+
+	fmt.Printf(`%od`, x)
 }
