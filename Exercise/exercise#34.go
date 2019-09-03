@@ -11,11 +11,11 @@ type user struct {
 }
 
 func main() {
-	raw_json := []byte(`[{"First":"Jitendar","Age":30},{"First":"Monalisa","Age":28}]`)
+	rawJSON := []byte(`[{"First":"Jitendar","Age":30},{"First":"Monalisa","Age":28}]`)
 
 	people := []user{}
 
-	error := json.Unmarshal(raw_json, &people)
+	error := json.Unmarshal(rawJSON, &people)
 	if error != nil {
 		fmt.Println(error)
 	}

@@ -15,3 +15,11 @@ func mySum(xi ...int) int {
 	}
 	return sum
 }
+
+func mySub(xi ...int) int {
+	res := 0
+	for _, v := range xi {
+		res = (v - res)
+	}
+	return res
+}
