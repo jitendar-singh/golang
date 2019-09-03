@@ -24,7 +24,11 @@ func main() {
 		go func() {
 			mu.Lock()
 			v := counter
-			// time.Sleep(time.Second * 2)
+		
+			// Gosched yields the processor, allowing other goroutines to run. 
+			// It does not suspend the current goroutine, so execution resumes 
+			// automatically.
+
 			runtime.Gosched()
 			v++
 			counter = v

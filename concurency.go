@@ -18,7 +18,7 @@ func main() {
 	// fmt.Println("Memory Profile\t", runtime.ReadMemStats(&runtime.MemStats))
 	fmt.Println("------------------------------")
 	// foo()
-	// bar()
+	// bar() 
 
 	wg.Add(1)
 	go foo()
