@@ -1,0 +1,106 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubernetes.io/created-by: >
+      {"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicationController","namespace":"my-project","name":"my-project-1","uid":"745d7f65-d2e1-11e9-a08f-0242ac110012","apiVersion":"v1","resourceVersion":"1979"}}
+    openshift.io/deployment-config.latest-version: '1'
+    openshift.io/deployment-config.name: my-project
+    openshift.io/deployment.name: my-project-1
+    openshift.io/scc: restricted
+  creationTimestamp: '2019-09-09T09:08:59Z'
+  generateName: my-project-1-
+  labels:
+    app: my-project
+    deployment: my-project-1
+    deploymentconfig: my-project
+  name: my-project-1-xvs5k
+  namespace: my-project
+  ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicationController
+      name: my-project-1
+      uid: 745d7f65-d2e1-11e9-a08f-0242ac110012
+  resourceVersion: '1993'
+  selfLink: /api/v1/namespaces/my-project/pods/my-project-1-xvs5k
+  uid: 75a4c8b9-d2e1-11e9-a08f-0242ac110012
+spec:
+  containers:
+    - image: >-
+        172.30.182.19:5000/my-project/my-project@sha256:b60b437a958390179e1a0a520fa8fa61e99ad1302b9b2910571ccbdd248381ac
+      imagePullPolicy: Always
+      name: my-project
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+      resources: {}
+      securityContext:
+        capabilities:
+          drop:
+            - KILL
+            - MKNOD
+            - SETGID
+            - SETUID
+            - SYS_CHROOT
+        privileged: false
+        runAsUser: 1000050000
+        seLinuxOptions:
+          level: 's0:c7,c4'
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: default-token-gkhrb
+          readOnly: true
+  dnsPolicy: ClusterFirst
+  imagePullSecrets:
+    - name: default-dockercfg-xpdnj
+  nodeName: 14c92622a9ea
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1000050000
+    seLinuxOptions:
+      level: 's0:c7,c4'
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  volumes:
+    - name: default-token-gkhrb
+      secret:
+        defaultMode: 420
+        secretName: default-token-gkhrb
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2019-09-09T09:08:59Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2019-09-09T09:09:01Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2019-09-09T09:08:59Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        docker://3d2224d738293d4a6919f9e3fa13ac3777a96f3c75e4b31659463872da53c825
+      image: '172.30.182.19:5000/my-project/my-project:latest'
+      imageID: >-
+        docker-pullable://172.30.182.19:5000/my-project/my-project@sha256:b60b437a958390179e1a0a520fa8fa61e99ad1302b9b2910571ccbdd248381ac
+      lastState: {}
+      name: my-project
+      ready: true
+      restartCount: 0
+      state:
+        running:
+          startedAt: '2019-09-09T09:09:01Z'
+  hostIP: 172.17.0.18
+  phase: Running
+  podIP: 172.20.0.2
+  qosClass: BestEffort
+  startTime: '2019-09-09T09:08:59Z'
